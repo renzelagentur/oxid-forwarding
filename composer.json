@@ -1,0 +1,15 @@
+{
+    "name": "ra/forwarding",
+    "description": "RA Forwarding lets you create custom 301 Redirects with origin and target for each shop",
+    "authors": [
+        {
+            "name": "Mathis",
+            "email": "math@vkf-renzel.de"
+        }
+    ],
+    "minimum-stability": "dev",
+    "type": "oxid-module",
+    "require": {
+        "vkf/installer": "@dev"
+    }
+}
