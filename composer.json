@@ -8,8 +8,8 @@
         }
     ],
     "minimum-stability": "dev",
-    "type": "oxid-module",
+    "type": "ra-module",
     "require": {
-        "vkf/installer": "@dev"
+        "ra/installer": "dev-master"
     }
 }
