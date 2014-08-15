@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author role
+ * @author math
  */
 class admin_raforwarding extends oxAdminView
 {

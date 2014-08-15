@@ -3,7 +3,7 @@
  * VKF RENZEL OXID WEBSHOP
  *
  * @category    VKF
- * @author      Robin Lehrmann <role@vkf-renzel.de>
+ * @author      Mathis Schülingkamp <math@vkf-renzel.de>
  * @copyright   Copyright (c) 2011 VKF Renzel GmbH. (http://www.renzel.net)
  * @version     $Id:$
  */
