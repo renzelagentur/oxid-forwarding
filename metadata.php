@@ -21,7 +21,7 @@ $sMetadataVersion = '1.1';
  */
 $aModule = array(
     'id'           => 'raforwarding',
-    'title'        => 'Renzel agentur Weiterleitung',
+    'title'        => 'ra forwarding',
     'description'  => array(
         'de' => 'Modul zum erstellen und bearbeiten von Weiterleitungen',
         'en' => 'RA Forwarding lets you create custom 301 Redirects with origin and target for each shop',
