@@ -8,13 +8,12 @@ class raforwardingmodel extends oxBase {
 
     protected $_sClassName = 'raforwardingmodel';
     protected $_sCoreTable = 'raforwarding';
-    protected $_blUseLazyLoading = true;
 
     public function __construct() {
         parent::__construct();
         $this->init();
     }
-    
+
     /**
      * @return string
      */
@@ -34,7 +33,7 @@ class raforwardingmodel extends oxBase {
         $sRet = parent::assign($aParams);
         return $sRet;
     }
-    
+
     public function save() {
         $sRet = parent::save();
         return $sRet;

@@ -10,31 +10,36 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent {
     /**
      * @return \raforwardinglist
      */
-    public function getForwardings() {
-        if ($this->aForwardings === NULL) {
+    public function getForwardings()
+    {
+        if ($this->aForwardings === NULL)
+        {
             $this->aForwardings = oxNew('raforwardinglist');
         }
-
         return $this->aForwardings;
     }
 
     /**
      * @param string $sSeoUrl
      * @return mixed
-     */ 
-   public function decodeUrl($sSeoUrl) {
-        $this->getForwardings()->loadActive();
-
+     */
+    public function decodeUrl($sSeoUrl)
+    {
+        $aForwardings = $this->getForwardings();
+        $aForwardings->loadActive();
+        
         /* @var $oForwarding \raforwardingmodel */
-        foreach ($this->getForwardings() as $oForwarding) {
+        foreach ($aForwardings as $oForwarding)
+        {
             $sOrigin = trim($oForwarding->raforwarding__origin->value, '/');
-
             $sTarget = $oForwarding->raforwarding__target->value;
-            if ($sOrigin === trim(urldecode($sSeoUrl), '/')) {
-                if(substr($sOrigin, 0, 4) == 'http') {
+            if ($sOrigin === trim(urldecode($sSeoUrl), '/'))
+            {
+                if (substr($sOrigin, 0, 4) == 'http')
+                {
                     $sTarget = '/' . $oForwarding->raforwarding__target->value;
                 }
-                header('Location: ' . $sTarget );
+                header('Location: ' . $sTarget);
                 exit;
             }
         }
@@ -42,5 +47,3 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent {
     }
 
 }
-
-?>
