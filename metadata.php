@@ -6,8 +6,8 @@
  * Any unauthorized use of this software without a valid license key
  * is a violation of the license agreement and will be prosecuted by
  * civil and criminal law.
-
- * @link      http://www.oxid-esales.com
+ *
+ * @link          http://www.oxid-esales.com
  * @copyright (C) OXID eSales AG 2003-2013
  */
 
@@ -20,34 +20,35 @@ $sMetadataVersion = '1.1';
  * Module information
  */
 $aModule = array(
-    'id'           => 'raforwarding',
-    'title'        => 'ra forwarding',
-    'description'  => array(
+    'id'          => 'raforwarding',
+    'title'       => 'ra forwarding',
+    'description' => array(
         'de' => 'Modul zum erstellen und bearbeiten von Weiterleitungen',
         'en' => 'RA Forwarding lets you create custom 301 Redirects with origin and target for each shop',
     ),
-    'thumbnail'    => 'picture.jpg',
-    'version'      => '1.0',
-    'author'       => 'Mathis Schülingkamp',
-    'url'          => 'http://www.renzel-agentur.de',
-    'email'        => 'math@renzel-agentur.de',
-    'extend' => array(
-        'oxseodecoder' => 'ra/forwarding/extend/raforwardingoxseodecoder'
+    'thumbnail'   => 'picture.jpg',
+    'version'     => '1.0',
+    'author'      => 'Mathis Schülingkamp',
+    'url'         => 'http://www.renzel-agentur.de',
+    'email'       => 'math@renzel-agentur.de',
+    'extend'      => array(
+        'oxseodecoder'  => 'ra/forwarding/extend/raforwardingoxseodecoder',
+        'oxshopcontrol' => 'ra/forwarding/extend/raforwardingoxshopcontrol'
     ),
-    'templates' => array(
-        'admin/forwarding.tpl' => 'ra/forwarding/views/admin/tpl/forwarding.tpl',
+    'templates'   => array(
+        'admin/forwarding.tpl'      => 'ra/forwarding/views/admin/tpl/forwarding.tpl',
         'admin/forwarding_list.tpl' => 'ra/forwarding/views/admin/tpl/forwarding_list.tpl',
         'admin/forwarding_main.tpl' => 'ra/forwarding/views/admin/tpl/forwarding_main.tpl',
     ),
-    'files' => array(
-        'raforwardingevents' => 'ra/forwarding/events.php',
-        'raforwardingmodel' => 'ra/forwarding/models/raforwardingmodel.php',
-        'raforwardinglist' => 'ra/forwarding/models/raforwardinglist.php',
-        'admin_raforwarding' => 'ra/forwarding/controllers/admin/raforwarding.php',
+    'files'       => array(
+        'raforwardingevents'      => 'ra/forwarding/events.php',
+        'raforwardingmodel'       => 'ra/forwarding/models/raforwardingmodel.php',
+        'raforwardinglist'        => 'ra/forwarding/models/raforwardinglist.php',
+        'admin_raforwarding'      => 'ra/forwarding/controllers/admin/raforwarding.php',
         'admin_raforwarding_main' => 'ra/forwarding/controllers/admin/raforwarding_main.php',
         'admin_raforwarding_list' => 'ra/forwarding/controllers/admin/raforwarding_list.php'
     ),
-    'events' => array(
+    'events'      => array(
         'onActivate' => 'raforwardingevents::onActivate',
     )
 );

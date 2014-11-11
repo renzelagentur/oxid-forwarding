@@ -1,18 +1,15 @@
 <?php
-
 /**
- * raforwardingoxseodecoder
+ * raforwardingoxshopcontrol.php
  *
- * @package   MODULNAME
  * @version   GIT: $Id$ PHP5.4 (16.10.2014)
  * @author    Robin Lehrmann <info@renzel-agentur.de>
  * @copyright Copyright (C) 22.10.2014 renzel.agentur GmbH. All rights reserved.
  * @license   http://www.renzel-agentur.de/licenses/raoxid-1.0.txt
  * @link      http://www.renzel-agentur.de/
- * @extend    EXTENDEDCLASS
  *
  */
-class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
+class raforwardingoxshopcontrol extends raforwardingoxshopcontrol_parent
 {
 
     /**
@@ -21,31 +18,28 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
     protected $_aForwardings;
 
     /**
-     * redirect's if the seourl matches
+     * redircts to special url
      *
-     * @param string $sSeoUrl seo url to analyse
+     * @param string $sClass      Class name
+     * @param string $sFunction   Funtion name
+     * @param array  $aParams     Parameters array
+     * @param array  $aViewsChain Array of views names that should be initialized also
      *
-     * @return mixed
+     * @return null
      */
-    public function decodeUrl($sSeoUrl)
+    public function start($sClass = null, $sFunction = null, $aParams = null, $aViewsChain = null)
     {
         $aForwardings = $this->getForwardings();
         $aForwardings->loadActive();
-
-        /* @var $oForwarding \raforwardingmodel */
         foreach ($aForwardings as $oForwarding) {
-            $sOrigin = trim($oForwarding->raforwarding__origin->value, '/');
+            $sOrigin = preg_replace('#^http(s)?://#', '', trim($oForwarding->raforwarding__origin->value, '/'));
             $sTarget = $oForwarding->raforwarding__target->value;
-            if ($sOrigin === trim(urldecode($sSeoUrl), '/')) {
-                if (substr($sOrigin, 0, 4) == 'http') {
-                    $sTarget = '/' . $oForwarding->raforwarding__target->value;
-                }
+            if ($sOrigin === trim(urldecode(oxRegistry::get('oxUtilsServer')->getServerVar('HTTP_HOST')), '/')) {
                 header('Location: ' . $sTarget);
                 exit;
             }
         }
-
-        return parent::decodeUrl($sSeoUrl);
+        parent::start($sClass, $sFunction, $aParams, $aViewsChain);
     }
 
     /**
