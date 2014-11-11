@@ -3,7 +3,8 @@
 /**
  * @author math
  */
-class admin_raforwarding_list extends oxAdminList {
+class admin_raforwarding_list extends oxAdminList
+{
 
     /**
      * @var string
@@ -21,14 +22,15 @@ class admin_raforwarding_list extends oxAdminList {
     protected $_sListClass = 'raforwardingmodel';
 
     /**
+     * Method which builds the where-clause
+     *
      * @return array
      */
-    public function buildWhere() {
+    public function buildWhere()
+    {
         $aWhere = parent::buildWhere();
         $aWhere['oxshopid'] = $this->getConfig()->getShopId();
+
         return $aWhere;
     }
-
 }
-
-?>
