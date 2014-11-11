@@ -17,4 +17,3 @@ $aLang = array(
     'RA_FORWARDING_ADMIN_SHOPID' => 'Shop-ID',
     'RA_FORWARDING_ADMIN_SUBMIT' => 'Save'
 );
-?>
