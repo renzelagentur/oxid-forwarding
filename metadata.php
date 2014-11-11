@@ -28,9 +28,9 @@ $aModule = array(
     ),
     'thumbnail'    => 'picture.jpg',
     'version'      => '1.0',
-    'author'       => 'math@vkf-renzel.de',
-    'url'          => 'http://www.oxid-esales.com',
-    'email'        => 'math@vkf-renzel.de',
+    'author'       => 'Mathis Schülingkamp',
+    'url'          => 'http://www.renzel-agentur.de',
+    'email'        => 'math@renzel-agentur.de',
     'extend' => array(
         'oxseodecoder' => 'ra/forwarding/extend/raforwardingoxseodecoder'
     ),
@@ -43,7 +43,7 @@ $aModule = array(
         'raforwardingevents' => 'ra/forwarding/events.php',
         'raforwardingmodel' => 'ra/forwarding/models/raforwardingmodel.php',
         'raforwardinglist' => 'ra/forwarding/models/raforwardinglist.php',
-    	'admin_raforwarding' => 'ra/forwarding/controllers/admin/raforwarding.php',
+        'admin_raforwarding' => 'ra/forwarding/controllers/admin/raforwarding.php',
         'admin_raforwarding_main' => 'ra/forwarding/controllers/admin/raforwarding_main.php',
         'admin_raforwarding_list' => 'ra/forwarding/controllers/admin/raforwarding_list.php'
     ),
