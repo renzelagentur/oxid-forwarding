@@ -1,6 +1,9 @@
 {
     "name": "ra/forwarding",
     "description": "RA Forwarding lets you create custom 301 Redirects with origin and target for each shop",
+    "require": {
+        "ra/installer": "dev-master"
+    },
     "authors": [
         {
             "name": "Mathis",
@@ -9,7 +12,10 @@
     ],
     "minimum-stability": "dev",
     "type": "ra-module",
-    "require": {
-        "ra/installer": "dev-master"
+    "autoload": {
+        "classmap": [
+            "models/",
+            "raforwardingevents.php"
+        ]
     }
 }
