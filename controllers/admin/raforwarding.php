@@ -10,4 +10,3 @@ class admin_raforwarding extends oxAdminView
      */
     protected $_sThisTemplate = 'admin/forwarding.tpl';
 }
-?>

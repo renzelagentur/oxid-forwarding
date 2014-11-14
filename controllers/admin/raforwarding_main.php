@@ -9,6 +9,7 @@ class admin_raforwarding_main extends oxAdminDetails
     protected $_sThisTemplate = 'admin/forwarding_main.tpl';
 
     /**
+     * Render Method
      *
      * @return string
      */
@@ -35,6 +36,9 @@ class admin_raforwarding_main extends oxAdminDetails
         return $sRet;
     }
 
+    /**
+     * Save the current forwarding rule
+     */
     public function save()
     {
         parent::save();
@@ -44,11 +48,11 @@ class admin_raforwarding_main extends oxAdminDetails
         $sShopID = oxConfig::getInstance()->getShopId();
         
         
-        if($sOXID == '-1' && isset($sOXID)) {
+        if ($sOXID == '-1' && isset($sOXID)) {
             $aParams['raforwarding__oxid'] = null;
         }
         
-        if($sShopID != NULL) {
+        if ($sShopID != null) {
             $aParams['raforwarding__oxshopid'] = oxConfig::getInstance()->getShopId();
         }
         
@@ -59,9 +63,6 @@ class admin_raforwarding_main extends oxAdminDetails
         $oForwarding->save();
         
         // set OXID if inserted
-        $this->setEditObjectId( $oForwarding->getId() );
+        $this->setEditObjectId($oForwarding->getId());
     }
-
 }
-
-?>
