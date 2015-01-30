@@ -19,7 +19,9 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
 
     /**
      * redirects if the seourl matches
+     *
      * @param string $sSeoUrl seo url to analyse
+     *
      * @return mixed
      */
     public function decodeUrl($sSeoUrl)
@@ -47,6 +49,7 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
 
     /**
      * Get active forwarding list
+     *
      * @return \raforwardinglist
      */
     public function getForwardings()
