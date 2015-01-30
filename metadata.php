@@ -32,8 +32,7 @@ $aModule = array(
     'url'         => 'http://www.renzel-agentur.de',
     'email'       => 'math@renzel-agentur.de',
     'extend'      => array(
-        'oxseodecoder'  => 'ra/forwarding/extend/raforwardingoxseodecoder',
-        'oxshopcontrol' => 'ra/forwarding/extend/raforwardingoxshopcontrol'
+        'oxseodecoder'  => 'ra/forwarding/extend/raforwardingoxseodecoder'
     ),
     'templates'   => array(
         'admin/forwarding.tpl'      => 'ra/forwarding/views/admin/tpl/forwarding.tpl',
