@@ -17,7 +17,7 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
     protected $_aForwardings;
 
     /**
-     * redirect's if the seourl matches
+     * redirects if the seourl matches
      *
      * @param string $sSeoUrl seo url to analyse
      *
@@ -27,14 +27,13 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
     {
         $aForwardings = $this->getForwardings();
         $aForwardings->loadActive();
-
         /* @var $oForwarding \raforwardingmodel */
         foreach ($aForwardings as $oForwarding) {
             $sOrigin = trim($oForwarding->raforwarding__origin->value, '/');
             $sTarget = $oForwarding->raforwarding__target->value;
             if ($sOrigin === trim(urldecode($sSeoUrl), '/')) {
                 if (substr($sOrigin, 0, 4) == 'http') {
-                    $sTarget = '/' . $oForwarding->raforwarding__target->value;
+                    $sTarget = '/' . trim($oForwarding->raforwarding__target->value, '/');
                 }
                 header('Location: ' . $sTarget);
                 exit;
