@@ -24,7 +24,7 @@ class admin_raforwarding_main extends oxAdminDetails
         $sRet = parent::render();
         
         $sOxid = $this->getEditObjectId();
-        $this->addTplParam('oxid', $this->getEditObjectId());
+        $this->addTplParam('oxid', $sOxid);
             
         if ($sOxid != "-1" && isset($sOxid)) {
             /* @var $oForwarding \raforwardingmodel */
