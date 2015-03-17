@@ -36,9 +36,12 @@ $aModule = array(
         'admin/forwarding_main.tpl' => 'ra/forwarding/views/admin/tpl/forwarding_main.tpl'
     ),
     'files'       => array(
+        'raforwardingevents'      => 'ra/forwarding/events.php',
         'admin_raforwarding'      => 'ra/forwarding/controllers/admin/raforwarding.php',
         'admin_raforwarding_main' => 'ra/forwarding/controllers/admin/raforwarding_main.php',
-        'admin_raforwarding_list' => 'ra/forwarding/controllers/admin/raforwarding_list.php'
+        'admin_raforwarding_list' => 'ra/forwarding/controllers/admin/raforwarding_list.php',
+        'raforwardingmodel'       => 'ra/forwarding/models/raforwardingmodel.php',
+        'raforwardinglist'        => 'ra/forwarding/models/raforwardinglist.php'
     ),
     'events'      => array(
         'onActivate' => 'raforwardingevents::onActivate'
