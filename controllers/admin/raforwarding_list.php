@@ -1,7 +1,13 @@
 <?php
-
 /**
- * @author math
+ * admin_raforwarding_list
+ *
+ * @package   raforwarding
+ * @author    Mathis Schülingkamp <info@renzel-agentur.de>
+ * @copyright Copyright (C) 17.03.2015 renzel.agentur GmbH. All rights reserved.
+ * @license   MIT
+ * @link      http://www.renzel-agentur.de/
+ * @extends   oxAdminList
  */
 class admin_raforwarding_list extends oxAdminList
 {
