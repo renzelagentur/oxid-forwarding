@@ -23,7 +23,7 @@ $aModule = array(
         'en' => 'RA Forwarding lets you create custom 301 Redirects with origin and target for each shop',
     ),
     'thumbnail'   => 'picture.jpg',
-    'version'     => '1.1.2',
+    'version'     => '1.1.5',
     'author'      => 'Mathis Schülingkamp',
     'url'         => 'http://www.renzel-agentur.de',
     'email'       => 'info@renzel-agentur.de',
