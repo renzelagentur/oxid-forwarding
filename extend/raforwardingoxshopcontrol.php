@@ -1,13 +1,12 @@
 <?php
 /**
- * raforwardingoxshopcontrol.php
+ * raforwardingoxshopcontrol
  *
- * @version   GIT: $Id$ PHP5.4 (16.10.2014)
- * @author    Robin Lehrmann <info@renzel-agentur.de>
- * @copyright Copyright (C) 22.10.2014 renzel.agentur GmbH. All rights reserved.
- * @license   http://www.renzel-agentur.de/licenses/raoxid-1.0.txt
+ * @package   raforwarding
+ * @author    Mathis Schülingkamp <info@renzel-agentur.de>
+ * @copyright Copyright (C) 17.03.2015 renzel.agentur GmbH. All rights reserved.
+ * @license   MIT
  * @link      http://www.renzel-agentur.de/
- *
  */
 class raforwardingoxshopcontrol extends raforwardingoxshopcontrol_parent
 {
