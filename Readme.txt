@@ -11,19 +11,13 @@ Mathis Schülingkamp, info@vkf-renzel.de
 math
 
 ==Version==
-1.1.2
+1.2.0
 
 ==Mail==
 info@vkf-renzel.de
 
 ==Extend==
-oxAdminDetails
-oxAdminList
-oxAdminView
-oxBase
-oxList
 oxseodecoder
-raforwardingoxseodecoder_parent
 
 ==Installation==
 Copy the module into your modules/ directory
@@ -33,6 +27,3 @@ Activate the RA Forwarding module and the module will create the SQL table
 
 If you want to create the SQL table manually,
 you can find the SQL Statement in the Install.sql
-
-==Libraries==
-jQuery
