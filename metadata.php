@@ -23,13 +23,12 @@ $aModule = array(
         'en' => 'RA Forwarding lets you create custom 301 Redirects with origin and target for each shop',
     ),
     'thumbnail'   => 'picture.jpg',
-    'version'     => '1.1.5',
+    'version'     => '1.2.0',
     'author'      => 'Mathis Schülingkamp',
     'url'         => 'http://www.renzel-agentur.de',
     'email'       => 'info@renzel-agentur.de',
     'extend'      => array(
-        'oxseodecoder'  => 'ra/forwarding/extend/raforwardingoxseodecoder',
-        'oxshopcontrol' => 'ra/forwarding/extend/raforwardingoxshopcontrol'
+        'oxseodecoder'  => 'ra/forwarding/extend/raforwardingoxseodecoder'
     ),
     'templates'   => array(
         'admin/forwarding.tpl'      => 'ra/forwarding/views/admin/tpl/forwarding.tpl',

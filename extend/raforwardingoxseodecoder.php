@@ -1,4 +1,5 @@
 <?php
+
 /**
  * raforwardingoxseodecoder
  *
@@ -25,15 +26,22 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
      */
     public function decodeUrl($sSeoUrl)
     {
+        $sShopUrl = oxRegistry::getConfig()->getShopUrl();
+
         $aForwardings = $this->getForwardings();
         $aForwardings->loadActive();
+
         /* @var $oForwarding \raforwardingmodel */
         foreach ($aForwardings as $oForwarding) {
-            $sOrigin = trim($oForwarding->raforwarding__origin->value, '/');
-            $sTarget = $oForwarding->raforwarding__target->value;
+            $sOrigin = str_replace($sShopUrl, '', trim($oForwarding->raforwarding__origin->value, '/'));
+            $sTargetValue = $oForwarding->raforwarding__target->value;
+            $sTarget = $sTargetValue;
+            if (substr($sTargetValue, 0, 4) != 'http') {
+                $sTarget = '/' . trim($sTargetValue, '/') . '/';
+            }
             if ($sOrigin === trim(urldecode($sSeoUrl), '/')) {
                 if (substr($sOrigin, 0, 4) == 'http') {
-                    $sTarget = '/' . trim($oForwarding->raforwarding__target->value, '/');
+                    $sTarget = '/' . $oForwarding->raforwarding__target->value;
                 }
                 header('Location: ' . $sTarget);
                 exit;
@@ -44,7 +52,7 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
     }
 
     /**
-     * get active forwarding list
+     * Get active forwarding list
      *
      * @return \raforwardinglist
      */
@@ -53,7 +61,7 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
         if ($this->_aForwardings === null) {
             $this->_aForwardings = oxNew('raforwardinglist');
         }
-
+        
         return $this->_aForwardings;
     }
 }
