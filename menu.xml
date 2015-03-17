@@ -3,7 +3,7 @@
     <OXMENU id="OXPS_RENZEL_ADMIN_MENU">
         <MAINMENU id="RA_FORWARDING_ADMIN_FORWARDING">
             <SUBMENU id="RA_FORWARDING_ADMIN_MANAGE" cl="admin_raforwarding" list="admin_raforwarding_list">
-                <TAB id="RA_FORWARDING_ADMIN_DIRECTORDER" cl="admin_raforwarding_main" />
+                <TAB id="RA_FORWARDING_ADMIN_NEW" cl="admin_raforwarding_main" />
                 <BTN id="admin_raforwarding_new" />
             </SUBMENU>
         </MAINMENU>

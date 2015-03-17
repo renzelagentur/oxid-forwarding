@@ -1,7 +1,13 @@
 <?php
-
 /**
- * @author math
+ * admin_raforwarding_main
+ *
+ * @package   raforwarding
+ * @author    Mathis Schülingkamp <info@renzel-agentur.de>
+ * @copyright Copyright (C) 17.03.2015 renzel.agentur GmbH. All rights reserved.
+ * @license   MIT
+ * @link      http://www.renzel-agentur.de/
+ * @extends   oxAdminDetails
  */
 class admin_raforwarding_main extends oxAdminDetails
 {
@@ -43,22 +49,21 @@ class admin_raforwarding_main extends oxAdminDetails
     {
         parent::save();
 
-        $aParams = oxConfig::getParameter('editval');
+        $oConfig = oxRegistry::getConfig();
+        $sShopID = $oConfig->getShopId();
+        $aParams = $oConfig->getRequestParameter('editval');
         $sOXID = $aParams['raforwarding__oxid'];
-        $sShopID = oxConfig::getInstance()->getShopId();
-        
-        
+
         if ($sOXID == '-1' && isset($sOXID)) {
             $aParams['raforwarding__oxid'] = null;
         }
         
         if ($sShopID != null) {
-            $aParams['raforwarding__oxshopid'] = oxConfig::getInstance()->getShopId();
+            $aParams['raforwarding__oxshopid'] = $sShopID;
         }
         
         /* @var $oForwarding \raforwardingmodel */
         $oForwarding = oxNew('raforwardingmodel');
-        
         $oForwarding->assign($aParams);
         $oForwarding->save();
         

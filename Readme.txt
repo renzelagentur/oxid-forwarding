@@ -5,16 +5,16 @@ RA Forwarding
 RA Forwarding lets you create custom 301 Redirects with origin and target for each shop
 
 ==Author==
-math@vkf-renzel.de
+Mathis Schülingkamp, info@vkf-renzel.de
 
 ==Prefix==
 math
 
 ==Version==
-1.0
+1.1.2
 
 ==Mail==
-math@vkf-renzel.de
+info@vkf-renzel.de
 
 ==Extend==
 oxAdminDetails

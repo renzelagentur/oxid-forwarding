@@ -7,7 +7,7 @@
  * @link      http://www.renzel-agentur.de/
  */
 
-$sLangName  = "Deutsch";
+$sLangName  = "English";
 
 $aMap = array(
 );

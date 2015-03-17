@@ -3,18 +3,18 @@
 /**
  * raforwardingoxseodecoder
  *
- * @package   MODULNAME
- * @version   GIT: $Id$ PHP5.4 (16.10.2014)
- * @author    Robin Lehrmann <info@renzel-agentur.de>
- * @copyright Copyright (C) 22.10.2014 renzel.agentur GmbH. All rights reserved.
- * @license   http://www.renzel-agentur.de/licenses/raoxid-1.0.txt
+ * @package   raforwarding
+ * @author    Mathis Schülingkamp <info@renzel-agentur.de>
+ * @copyright Copyright (C) 17.03.2015 renzel.agentur GmbH. All rights reserved.
+ * @license   MIT
  * @link      http://www.renzel-agentur.de/
- * @extend    EXTENDEDCLASS
  */
 class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
 {
 
-    /** @var \raforwardinglist */
+    /**
+     * @var \raforwardinglist
+     */
     protected $_aForwardings;
 
     /**
@@ -40,10 +40,14 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
                 $sTarget = '/' . trim($sTargetValue, '/') . '/';
             }
             if ($sOrigin === trim(urldecode($sSeoUrl), '/')) {
+                if (substr($sOrigin, 0, 4) == 'http') {
+                    $sTarget = '/' . $oForwarding->raforwarding__target->value;
+                }
                 header('Location: ' . $sTarget);
                 exit;
             }
         }
+
         return parent::decodeUrl($sSeoUrl);
     }
 
@@ -57,6 +61,7 @@ class raforwardingoxseodecoder extends raforwardingoxseodecoder_parent
         if ($this->_aForwardings === null) {
             $this->_aForwardings = oxNew('raforwardinglist');
         }
+        
         return $this->_aForwardings;
     }
 }
