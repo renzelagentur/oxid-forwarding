@@ -11,10 +11,10 @@ Mathis Schülingkamp, info@vkf-renzel.de
 math
 
 ==Version==
-1.2.0
+1.2.1
 
 ==Mail==
-info@vkf-renzel.de
+info@renzel-agentur.de
 
 ==Extend==
 oxseodecoder

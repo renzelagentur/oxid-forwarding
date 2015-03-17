@@ -1,21 +1,16 @@
 {
     "name": "ra/forwarding",
     "description": "RA Forwarding lets you create custom 301 Redirects with origin and target for each shop",
+    "license": "MIT",
     "require": {
         "ra/installer": "dev-master"
     },
     "authors": [
         {
-            "name": "Mathis",
-            "email": "math@vkf-renzel.de"
+            "name": "Mathis Schülingkamp",
+            "email": "info@renzel-agentur.de"
         }
     ],
     "minimum-stability": "dev",
-    "type": "ra-module",
-    "autoload": {
-        "classmap": [
-            "models/",
-            "raforwardingevents.php"
-        ]
-    }
+    "type": "ra-module"
 }
